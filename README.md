@@ -50,11 +50,11 @@ Main model options (`SparseVAESpikeSlab`):
 
 | Argument | Default | Description |
 |---|---|---|
-| `latent_dim` | – | number of latent factors (can be larger than the true number; unused factors are switched off) |
+| `latent_dim` | – | number of latent factors (can be larger than the true number; sparsity in W can "switch off" unused factors) |
 | `lambda0`, `lambda1` | `15`, `0.1` | spike and slab penalties on `W` |
 | `loss_type` | `'mse'` | `'mse'` (Gaussian), `'binary'`, or `'categorical'` |
-| `hidden_dim` | `300` | width of encoder/decoder hidden layers; smaller networks (e.g. `50`) give sparser `W` on small datasets |
-| `decode_vec` | `True` | `True` uses a vectorized decoder; `False` uses a per-feature loop |
+| `hidden_dim` | `300` | width of encoder/decoder hidden layers|
+| `decode_vec` | `True` | `True` uses a vectorized decoder (faster); `False` uses a per-feature loop (slower) |
 
 Training options (`ModelTrainer.train`):
 
