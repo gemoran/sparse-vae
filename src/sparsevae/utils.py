@@ -49,7 +49,7 @@ def sigma_prior(x, sig_quant=0.9, sig_df=3, init_frac=0.8):
 
 	A rough noise level ``sig_est`` is the 5% quantile of the per-feature standard
 	deviations. The scaled-inverse-chi^2 prior on sigma_j^2 puts probability
-	``sig_quant`` on sigma_j > sig_est. Each sigma_j is initialized at
+	``sig_quant`` on sigma_j < sig_est. Each sigma_j is initialized at
 	``init_frac`` times the standard deviation of feature j.
 
 	Args:
