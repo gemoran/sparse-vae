@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sparsevae"
+version = "0.1.0"
+description = "Sparse VAE: identifiable variational autoencoders via sparse decoding"
+readme = "README.md"
+requires-python = ">=3.9"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Gemma Moran" }]
+dependencies = [
+    "torch>=2.0",   # torch.vmap
+    "numpy",
+    "scipy",
+    "scikit-learn",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.urls]
+Paper = "https://arxiv.org/abs/2110.10804"
+Source = "https://github.com/gemoran/sparse-vae"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
